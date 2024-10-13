@@ -8,6 +8,7 @@ export function claroEscuro() {
     const card = document.querySelectorAll(".card");
     const navBar = document.getElementById("nav-bar");
     const imgBorda = document.querySelectorAll(".bordaR2");
+    const rodape = document.getElementById("rodape");
 
     // Verifica o tema armazenado no localStorage
     const temaAtual = localStorage.getItem("tema");
@@ -25,6 +26,7 @@ export function claroEscuro() {
         modo.innerHTML = "☀️";
         site.style.backgroundColor = "white";
         titulo.style.color = "black";
+        rodape.style.color = "#d1d1d1";
         navBar.style.boxShadow = "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px";
         elementosInfo.forEach(elemento => {
             elemento.style.color = 'black';
@@ -44,6 +46,7 @@ export function claroEscuro() {
         modo.innerHTML = "🌙";
         site.style.backgroundColor = "black";
         titulo.style.color = "white";
+        rodape.style.color = "rgb(76, 175, 80)";
         navBar.style.boxShadow = "rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px";
         elementosInfo.forEach(elemento => {
             elemento.style.color = '#4CAF50';
