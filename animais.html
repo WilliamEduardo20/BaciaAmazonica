@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lista.css">
+    <link rel="stylesheet" href="personal.css">
+    <title>Bacia Amazonica</title>
+</head>
+<body id="site">
+    <header>
+        <nav id="nav-bar" class="nav-bar">
+            <div class="redirection">
+                <p id="bioma" class="title text-center">Bacia Amazônica</p>
+            </div>
+            <div id="box" class="box">
+                <div id="home" class="redirection" role="button" tabindex="0">
+                    <img src="./imgs/icons/home.png" class="icon" alt="home">
+                    <p>Home</p>
+                </div>
+                <div id="mais" class="redirection" role="button" tabindex="0">
+                    <img src="./imgs/icons/home+.png" class="icon" alt="mais">
+                    <p>Saiba+</p>
+                </div>
+                <div id="animais" class="redirection" role="button" tabindex="0">
+                    <img src="./imgs/icons/paw.png" class="icon" alt="Animais">
+                    <p>Animais</p>
+                </div>
+                <div id="plantas" class="redirection" role="button" tabindex="0">
+                    <img src="./imgs/icons/leaf.png" class="icon" alt="Plantas">
+                    <p>Plantas</p>
+                </div>
+                <div id="perigo" class="redirection" role="button" tabindex="0">
+                    <img src="./imgs/icons/beware.png" class="icon" alt="perigo">
+                    <p>Problemas</p>
+                </div>
+            </div>
+            <button id="modo" class="button-29">☀️</button>
+        </nav>
+        <section>
+            <div class="carrossel">
+                <div class="imagens">
+                    <img id="img1" src="./imgs/slider/1.png" alt="Imagem 1">
+                    <img id="img2" src="./imgs/slider/2.png" alt="Imagem 2">
+                    <img id="img3" src="./imgs/slider/3.png" alt="Imagem 3">
+                    <img id="img4" src="./imgs/slider/4.png" alt="Imagem 4">
+                    <img id="img5" src="./imgs/slider/5.png" alt="Imagem 5">
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+    </header>
+    <main class="corpo">
+        <h1 id="titulo" class="titulo space-bottom10 space-top5">Animais da Bacia Amazônica</h1>
+        <section id="cards-animais"></section>
+    </main>
+    <footer id="rodape" class="rodape space-top10"></footer>
+    <div id="message-box" class="caixa-texto" style="display: none;"></div>
+    <script type="module" src="js/inicia.js"></script>
+</body>
+</html>

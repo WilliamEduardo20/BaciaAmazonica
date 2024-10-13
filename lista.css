@@ -1,0 +1,11 @@
+/*Classes para JS*/
+.addOp #home,.addOp #mais,.addOp #animais,.addOp #plantas,.addOp #perigo,.addOp #modo, .box{
+    opacity: 1; /* Inicialmente visível */
+    transition: 0.5s ease; /* Transição suave de 0.5 segundos */
+}
+.opacty{
+    opacity: 0;
+}
+.transition{
+    transition: 0.5s ease;
+}
