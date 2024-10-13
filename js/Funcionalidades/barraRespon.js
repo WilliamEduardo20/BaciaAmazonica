@@ -25,7 +25,7 @@ export function barraResponsiva() {
             setTimeout(() => {
                 // Aumenta a barra e espera antes de mostrar os elementos
                 navBar.style.transition = "0.8s ease";
-                navBar.style.width = "180px";
+                navBar.style.width = "200px";
                 navBar.style.height = "100px";
 
                 liBtn.forEach(elemento => {
