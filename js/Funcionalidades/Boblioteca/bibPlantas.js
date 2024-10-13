@@ -25,7 +25,7 @@ export var plantas = [
     },
     {
         id: 'jatoba',
-        img: './imgs/plantas/jato.jpg',
+        img: './imgs/plantas/jato.png',
         nome: 'Jatobá',
         cientifico: 'Hymenaea courbaril',
         grupo: 'Angiospermae/Magnoliopsida/ Fabales',
