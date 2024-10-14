@@ -4,7 +4,7 @@ import { creatCardAnimal } from "./Funcionalidades/criaCartão.js";
 import { criaMensagem } from "./Funcionalidades/mensagCard.js";
 import { secreto } from "./Funcionalidades/secreto.js";
 import { secretoF2 } from "./Funcionalidades/secretoF2.js";
-import { barraResponsivaPC } from "./Funcionalidades/barraRespon.js";
+import { barraResponsivaPC, barraResponsivaMobi } from "./Funcionalidades/barraRespon.js";
 import { carrosel } from "./Funcionalidades/carrosel.js";
 import { aleatorio } from "./Funcionalidades/aleatorio.js";
 
@@ -21,7 +21,11 @@ claroEscuro();
 redireciona();
 
 //Barra Responsiva
-barraResponsivaPC();
+if (document.getElementById("site").offsetWidth <= 480) {
+    barraResponsivaMobi();
+} else {
+    barraResponsivaPC();
+}
 
 //Carrosel de Imagens
 carrosel();

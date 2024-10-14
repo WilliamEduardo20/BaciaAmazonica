@@ -297,3 +297,33 @@ a{
     margin: 0; /* Remove margens para melhor controle do layout */
     line-height: 1.5; /* Melhora a legibilidade do texto */
 }
+
+@media only screen and (max-width:708px) {
+    .nav-bar{
+        z-index: 3;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-size: larger;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 1.95px;
+        gap: 25px;
+        color: var(--primary-color);
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        background-color: var(--tercily-color);
+        border-radius: 10px;
+        margin: 10px;
+        width: 50%;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
