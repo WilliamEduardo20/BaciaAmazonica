@@ -317,7 +317,8 @@ a{
         background-color: var(--tercily-color);
         border-radius: 10px;
         margin: 10px;
-        width: 50%;
+        width: 55%;
+        height: 'auto';
     }
     .box{
         display: flex;
