@@ -70,3 +70,11 @@
 }
 .tam4{ height: 200px;}
 .bordaR2{ border-radius: 0 20px 0 20px;}
+
+
+@media only screen and (max-width:708px){
+    .img-mapa{
+        height: "auto";
+        width: 100vh;
+    }
+}
