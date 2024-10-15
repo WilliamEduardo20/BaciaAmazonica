@@ -217,9 +217,10 @@ a{
     flex-wrap: wrap;
     width: 100%;
     gap: 28px;
+    list-style-type: none;
 } 
 .paises div{
-    max-width: 22%;
+    max-width: 45%;
 }
 .paises img{
     max-width: 100%;
