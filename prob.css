@@ -36,6 +36,7 @@
     height: 300px;
 }
 .redirect {
+    text-align: center;
     position: absolute; /* Position the button absolutely */
     bottom: 20px; /* Adjust as needed */
     left: 50%; /* Center horizontally */
@@ -57,12 +58,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     .news-card {
         flex-direction: column;
-        width: 100%;
-    }
-    .news-content {
         width: 100%;
     }
 }
