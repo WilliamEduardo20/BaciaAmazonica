@@ -31,6 +31,7 @@ a{
 .text-center{ text-align: center;}
 
 .titulo{
+    text-align: center;
     font-weight: bold;
     font-size: xx-large;
 }
@@ -214,6 +215,7 @@ a{
     align-items: end;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
     gap: 28px;
 } 
 .paises div{
