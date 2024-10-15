@@ -77,7 +77,8 @@
         width: 100%;
     }
     .caixa-imagens img {
-        min-width: 150px;
+        max-width: calc(50% - 10px);
+        min-width: 120px;
     }
 
     .mapa{
