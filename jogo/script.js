@@ -231,10 +231,10 @@ const animais = [
         ]
     }
 ];
-
-let currentAnimalIndex = 0;
+let totalQuestions = 0;
 let currentQuestionIndex = 0;
 let score = 0;
+let selectedQuestions = [];
 
 const questionElement = document.getElementById('question');
 const answersElement = document.getElementById('answers');
@@ -242,19 +242,45 @@ const nextButton = document.getElementById('next-button');
 const scoreContainer = document.getElementById('score-container');
 const scoreElement = document.getElementById('score');
 const restartButton = document.getElementById('restart-button');
+const feedbackElement = document.getElementById('feedback');
+
+document.getElementById('start-button').addEventListener('click', () => {
+    totalQuestions = parseInt(document.getElementById('question-count').value);
+    console.log("Total de perguntas selecionadas: ", totalQuestions);
+    document.getElementById("quiz-container").style.display = 'block';
+    startGame();
+});
 
 function startGame() {
-    currentAnimalIndex = 0;
     currentQuestionIndex = 0;
     score = 0;
+    selectedQuestions = [];
+
+    const allQuestions = animais.flatMap(animal => animal.perguntas);
+    allQuestions.sort(() => Math.random() - 0.5);
+    selectedQuestions = allQuestions.slice(0, totalQuestions);
+
+    if (selectedQuestions.length === 0) {
+        alert("Não há perguntas suficientes disponíveis.");
+        return;
+    }
+
     nextButton.classList.add('hidden');
     scoreContainer.classList.add('hidden');
-    showQuestion(animais[currentAnimalIndex].perguntas[currentQuestionIndex]);
+    feedbackElement.classList.add('hidden');
+
+    showQuestion(selectedQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(pergunta) {
+    if (!pergunta) {
+        console.error("Pergunta não encontrada!");
+        return;
+    }
     questionElement.innerText = pergunta.pergunta;
     answersElement.innerHTML = '';
+    feedbackElement.classList.add('hidden');
+
     pergunta.respostas.forEach((resposta, index) => {
         const button = document.createElement('button');
         button.innerText = resposta;
@@ -267,8 +293,17 @@ function showQuestion(pergunta) {
 function selectAnswer(index, pergunta) {
     if (index === pergunta.correta) {
         score++;
+        feedbackElement.innerText = "Resposta Correta!";
+        feedbackElement.classList.remove('incorrect');
+        feedbackElement.classList.add('correct');
+    } else {
+        feedbackElement.innerText = "Resposta Errada!";
+        feedbackElement.classList.remove('correct');
+        feedbackElement.classList.add('incorrect');
     }
+    feedbackElement.classList.remove('hidden');
     nextButton.classList.remove('hidden');
+
     Array.from(answersElement.children).forEach(button => {
         button.disabled = true;
     });
@@ -276,29 +311,71 @@ function selectAnswer(index, pergunta) {
 
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
-    if (currentQuestionIndex < animais[currentAnimalIndex].perguntas.length) {
-        showQuestion(animais[currentAnimalIndex].perguntas[currentQuestionIndex]);
+    if (currentQuestionIndex < selectedQuestions.length) {
+        showQuestion(selectedQuestions[currentQuestionIndex]);
         nextButton.classList.add('hidden');
     } else {
-        currentAnimalIndex++;
-        if (currentAnimalIndex < animais.length) {
-            currentQuestionIndex = 0;
-            showQuestion(animais[currentAnimalIndex].perguntas[currentQuestionIndex]);
-            nextButton.classList.add('hidden');
-        } else {
-            showScore();
-        }
+        showScore();
     }
 });
 
 function showScore() {
-    scoreElement.innerText = `${score} de ${animais.reduce((acc, animal) => acc + animal.perguntas.length, 0)}`;
+    scoreElement.innerText = `${score} de ${selectedQuestions.length}`;
     scoreContainer.classList.remove('hidden');
     questionElement.innerText = '';
     answersElement.innerHTML = '';
 }
 
-restartButton.addEventListener('click', startGame);
+let scores = [];
 
-// Inicie o jogo
-startGame();
+// Carrega os scores do localStorage ao iniciar
+document.addEventListener('DOMContentLoaded', () => {
+    loadScoresFromLocalStorage();
+});
+
+function saveScoresToLocalStorage() {
+    localStorage.setItem('animalQuizScores', JSON.stringify(scores));
+}
+
+function loadScoresFromLocalStorage() {
+    const savedScores = localStorage.getItem('animalQuizScores');
+    if (savedScores) {
+        scores = JSON.parse(savedScores);
+    }
+}
+
+document.getElementById('submit-name').addEventListener('click', () => {
+    const userName = document.getElementById('user-name').value;
+    const scoreboardContainer = document.getElementById('scoreboard-container');
+    if (userName) {
+        scores.push({ name: userName, score: score });
+        scores.sort((a, b) => b.score - a.score);
+        saveScoresToLocalStorage(); // Salva os scores no localStorage
+        displayScoreboard();
+        scoreContainer.classList.add('hidden');
+        scoreboardContainer.classList.remove('hidden');
+    } else {
+        alert("Por favor, insira seu nome.");
+    }
+});
+
+function displayScoreboard() {
+    const scoreboardElement = document.getElementById('scoreboard');
+    scoreboardElement.innerHTML = ''; // Limpa o placar anterior
+    scores.forEach(entry => {
+        const li = document.createElement('li');
+        li.innerText = `${entry.name}: ${entry.score} acertos`;
+        scoreboardElement.appendChild(li);
+    });
+}
+
+function showScore() {
+    const nameContainer = document.getElementById("name-container");
+    scoreElement.innerText = `${score} de ${selectedQuestions.length}`;
+    scoreContainer.classList.remove('hidden');
+    questionElement.innerText = '';
+    answersElement.innerHTML = '';
+    nameContainer.classList.remove('hidden'); // Exibe o formulário para nome
+}
+
+restartButton.addEventListener('click', startGame);

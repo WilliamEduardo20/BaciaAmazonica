@@ -41,3 +41,25 @@ button:hover {
 .hidden {
     display: none;
 }
+
+#feedback {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+#scoreboard {
+    list-style-type: none;
+    padding: 0;
+}
+
+#scoreboard li {
+    margin: 5px 0;
+}

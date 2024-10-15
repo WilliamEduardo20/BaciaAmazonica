@@ -9,14 +9,33 @@
 <body>
     <div class="container">
         <h1>Jogo de Perguntas e Respostas sobre Animais</h1>
-        <div id="quiz-container">
+        <div id="setup-container">
+            <h2>Escolha o número de perguntas:</h2>
+            <select id="question-count">
+                <option value="2">2 Perguntas</option>
+                <option value="5">5 Perguntas</option>
+                <option value="10">10 Perguntas</option>
+            </select>
+            <button id="start-button">Iniciar Jogo</button>
+        </div>
+        <div id="quiz-container" class="hidden">
             <div id="question"></div>
             <div id="answers"></div>
+            <div id="feedback" class="hidden"></div>
             <button id="next-button" class="hidden">Próxima Pergunta</button>
         </div>
         <div id="score-container" class="hidden">
             <h2>Sua pontuação: <span id="score"></span></h2>
             <button id="restart-button">Recomeçar</button>
+        </div>
+        <div id="name-container" class="hidden">
+            <h2>Digite seu nome:</h2>
+            <input type="text" id="user-name" placeholder="Seu nome">
+            <button id="submit-name">Enviar</button>
+        </div>
+        <div id="scoreboard-container" class="hidden">
+            <h2>Placar</h2>
+            <ol id="scoreboard"></ol>
         </div>
     </div>
     <script src="script.js"></script>
