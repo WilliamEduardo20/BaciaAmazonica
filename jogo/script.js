@@ -345,27 +345,38 @@ function loadScoresFromLocalStorage() {
 }
 
 document.getElementById('submit-name').addEventListener('click', () => {
-    const userName = document.getElementById('user-name').value;
+    const userName = document.getElementById('user-name').value.trim();
     const scoreboardContainer = document.getElementById('scoreboard-container');
-    if (userName) {
-        scores.push({ name: userName, score: score });
+
+    // Verifica se o nome não está vazio e se já não existe
+    if (userName && !scores.some(entry => entry.name === userName)) {
+        const date = new Date().toLocaleString();
+        scores.push({ name: userName, score: score, date: date });
         scores.sort((a, b) => b.score - a.score);
+        
+        // Adiciona posição após ordenar
+        scores.forEach((entry, index) => {
+            entry.position = index + 1; // Posição começa em 1
+        });
+
         saveScoresToLocalStorage(); // Salva os scores no localStorage
         displayScoreboard();
         scoreContainer.classList.add('hidden');
         scoreboardContainer.classList.remove('hidden');
-    } else {
+    } else if (!userName) {
         alert("Por favor, insira seu nome.");
+    } else {
+        alert("Nome já existe. Por favor, insira um nome diferente.");
     }
 });
 
 function displayScoreboard() {
-    const scoreboardElement = document.getElementById('scoreboard');
-    scoreboardElement.innerHTML = ''; // Limpa o placar anterior
+    const tbody = document.querySelector('#scoreboard tbody');
+    tbody.innerHTML = ''; // Limpa o placar anterior
     scores.forEach(entry => {
-        const li = document.createElement('li');
-        li.innerText = `${entry.name}: ${entry.score} acertos`;
-        scoreboardElement.appendChild(li);
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${entry.position}</td><td>${entry.name}</td><td>${entry.score}</td><td>${entry.date}</td>`;
+        tbody.appendChild(row);
     });
 }
 

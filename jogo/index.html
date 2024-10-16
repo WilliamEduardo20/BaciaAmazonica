@@ -30,12 +30,22 @@
         </div>
         <div id="name-container" class="hidden">
             <h2>Digite seu nome:</h2>
-            <input type="text" id="user-name" placeholder="Seu nome">
+            <input type="text" id="user-name" placeholder="Seu nome" maxlength="10">
             <button id="submit-name">Enviar</button>
         </div>
         <div id="scoreboard-container" class="hidden">
             <h2>Placar</h2>
-            <ol id="scoreboard"></ol>
+            <table id="scoreboard" class="score-table">
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Nome</th>
+                        <th>Pontuação</th>
+                        <th>Data/Hora</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
     <script src="script.js"></script>
