@@ -15,6 +15,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.voltar{
+    position: fixed;
+    width: 8%;
+}
+
 h1 {
     text-align: center;
 }
@@ -95,10 +100,19 @@ button:hover {
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 8px; /* Adiciona bordas arredondadas, se desejado */
     margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+    margin-top: 20px;
 }
 
 /* Responsividade para telas menores */
 @media screen and (max-width: 600px) {
+    .voltar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 20px;
+        width: 15%;
+    }
+
     .score-table {
         display: flex; /* Permite rolagem horizontal */
         flex-direction: column;
@@ -123,5 +137,7 @@ button:hover {
     /* Adiciona qualquer estilo específico para telas menores, se necessário */
     #question-image {
         margin: 0 auto; /* Centraliza a imagem se necessário */
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }

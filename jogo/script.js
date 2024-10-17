@@ -231,6 +231,12 @@ const animais = [
         ]
     }
 ];
+
+function voltar(){
+    window.location.href = "../index.html";
+}
+document.querySelector('.voltar').addEventListener('click', voltar);
+
 let totalQuestions = 0;
 let currentQuestionIndex = 0;
 let score = 0;
