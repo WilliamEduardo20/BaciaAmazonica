@@ -5,7 +5,7 @@ const animais = [
         nome: 'Onça-Pintada',
         cientifico: 'Panthera onca',
         grupo: 'Chordata/Mammalia/Carnivora',
-        ameaca: 'Quase Ameaçada',
+        img: '../imgs/animais/onça-pintada.jpg',
         mensagem: `A onça-pintada é o maior felino das Américas e um predador de topo.`,
         perguntas: [
             {
@@ -26,7 +26,7 @@ const animais = [
         nome: 'Anta',
         cientifico: 'Tapirus terrestris',
         grupo: 'Chordata/Mammalia/Perissodactyla',
-        ameaca: 'Vulnerável',
+        img: '../imgs/animais/anta.jpg',
         mensagem: `A anta é o maior mamífero terrestre da América do Sul.`,
         perguntas: [
             {
@@ -47,7 +47,7 @@ const animais = [
         nome: 'Pirarucu',
         cientifico: 'Arapaima gigas',
         grupo: 'Chordata/Actinopterygii/Osteoglossiformes',
-        ameaca: 'Dados Insuficientes',
+        img: '../imgs/animais/pirarucu.jpg',
         mensagem: `O pirarucu é um dos maiores peixes de água doce do mundo.`,
         perguntas: [
             {
@@ -68,7 +68,7 @@ const animais = [
         nome: 'Tracajá',
         cientifico: 'Podocnemis unifilis',
         grupo: 'Chordata/Reptilia/Testudines',
-        ameaca: 'Vulnerável',
+        img: '../imgs/animais/tracaja.jpg',
         mensagem: `O tracajá é uma tartaruga comum na Amazônia.`,
         perguntas: [
             {
@@ -89,7 +89,7 @@ const animais = [
         nome: 'Peixe-Boi-da-Amazônia',
         cientifico: 'Trichechus inunguis',
         grupo: 'Chordata/Mammalia/Sirenia',
-        ameaca: 'Vulnerável',
+        img: '../imgs/animais/peixe-boi-da-amazonia.jpg',
         mensagem: `O peixe-boi-da-Amazônia é um mamífero herbívoro.`,
         perguntas: [
             {
@@ -110,7 +110,7 @@ const animais = [
         nome: 'Boto-Cor-de-Rosa',
         cientifico: 'Inia geoffrensis',
         grupo: 'Chordata/Mammalia/Cetacea',
-        ameaca: 'Dados Insuficientes',
+        img: '../imgs/animais/boto-cor-de-rosa.jpg',
         mensagem: `O boto-cor-de-rosa é o maior golfinho de água doce do mundo.`,
         perguntas: [
             {
@@ -131,7 +131,7 @@ const animais = [
         nome: 'Arara-Vermelha',
         cientifico: 'Ara macao',
         grupo: 'Chordata/Aves/Psittaciformes',
-        ameaca: 'Pouco Preocupante',
+        img: '../imgs/animais/arara-vermelha.jpg',
         mensagem: `A arara-vermelha é uma das aves mais icônicas da Amazônia.`,
         perguntas: [
             {
@@ -152,7 +152,7 @@ const animais = [
         nome: 'Anaconda',
         cientifico: 'Eunectes murinus',
         grupo: 'Chordata/Reptilia/Squamata',
-        ameaca: 'Pouco Preocupante',
+        img: '../imgs/animais/anaconda.jpg',
         mensagem: `A anaconda é uma das maiores serpentes do mundo.`,
         perguntas: [
             {
@@ -173,11 +173,11 @@ const animais = [
         nome: 'Galo-da-Serra',
         cientifico: 'Rupicola rupicola',
         grupo: 'Chordata/Aves/Passeriformes',
-        ameaca: 'Pouco Preocupante',
+        img: '../imgs/animais/galo-da-serra.jpg',
         mensagem: `O galo-da-serra é uma das aves mais coloridas da Amazônia.`,
         perguntas: [
             {
-                pergunta: `Qual é a cor da plumagem do macho?`,
+                pergunta: `Qual é a cor da plumagem do macho do Galo-da-Serra?`,
                 respostas: ['Verde', 'Vermelha e laranja', 'Azul', 'Preta'],
                 correta: 1
             },
@@ -194,7 +194,7 @@ const animais = [
         nome: 'Piranha',
         cientifico: 'Pygocentrus nattereri',
         grupo: 'Chordata/Actinopterygii/Characiformes',
-        ameaca: 'Pouco Preocupante',
+        img: '../imgs/animais/piranha.jpg',
         mensagem: `A piranha é um peixe carnívoro que habita os rios da Amazônia.`,
         perguntas: [
             {
@@ -215,7 +215,7 @@ const animais = [
         nome: 'Preguiça-de-Bentinho',
         cientifico: 'Bradypus tridactylus',
         grupo: 'Chordata/Mammalia/Pilosa',
-        ameaca: 'Pouco Preocupante',
+        img: '../imgs/animais/preguica-de-bentinho.jpg',
         mensagem: `A preguiça-de-bentinho é uma espécie de preguiça que habita as florestas tropicais da Amazônia.`,
         perguntas: [
             {
@@ -277,9 +277,22 @@ function showQuestion(pergunta) {
         console.error("Pergunta não encontrada!");
         return;
     }
+
+    // Obtenha o animal correspondente à pergunta atual
+    const animal = animais.find(a => a.perguntas.includes(pergunta));
+    const imageElement = document.getElementById('question-image');
+
     questionElement.innerText = pergunta.pergunta;
     answersElement.innerHTML = '';
     feedbackElement.classList.add('hidden');
+
+    // Exibe a imagem do animal
+    if (animal) {
+        imageElement.src = animal.img; // Define a imagem do animal
+        imageElement.classList.remove('hidden'); // Torna a imagem visível
+    } else {
+        imageElement.classList.add('hidden'); // Esconde a imagem se o animal não for encontrado
+    }
 
     pergunta.respostas.forEach((resposta, index) => {
         const button = document.createElement('button');

@@ -38,6 +38,8 @@ export function claroEscuro() {
         aplicarEstilosSub(sub, 'black');
         aplicarEstilosRedirect(redirect, 'black');
 
+        mudarNavBarClaro();
+
         // Salva a preferência no localStorage
         localStorage.setItem("tema", "claro");
     }
@@ -57,6 +59,8 @@ export function claroEscuro() {
         aplicarEstilosCard(card, '0 4px 20px rgba(0, 128, 255, 0.7)');
         aplicarEstilosSub(sub, '#08B2E3');
         aplicarEstilosRedirect(redirect, 'white');
+
+        mudarNavBarEscuro();
 
         // Salva a preferência no localStorage
         localStorage.setItem("tema", "escuro");
@@ -78,5 +82,15 @@ export function claroEscuro() {
         redirects.forEach(elemento => {
             elemento.style.color = color;
         });
+    }
+
+    function mudarNavBarClaro(){
+        navBar.style.backgroundColor = "var(--tercily-color)";
+        navBar.style.color = "black";
+    }
+
+    function mudarNavBarEscuro(){
+        navBar.style.backgroundColor = "var(--escuro)";
+        navBar.style.color = "white";
     }
 }

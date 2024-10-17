@@ -90,6 +90,13 @@ button:hover {
     background-color: #ddd;
 }
 
+#question-image {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Adiciona bordas arredondadas, se desejado */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+
 /* Responsividade para telas menores */
 @media screen and (max-width: 600px) {
     .score-table {
@@ -111,5 +118,10 @@ button:hover {
     .score-table tr {
         margin-bottom: 10px; /* Espaçamento entre as linhas */
         display: block; /* Cada linha se torna um bloco */
+    }
+
+    /* Adiciona qualquer estilo específico para telas menores, se necessário */
+    #question-image {
+        margin: 0 auto; /* Centraliza a imagem se necessário */
     }
 }
