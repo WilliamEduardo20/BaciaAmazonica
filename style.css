@@ -221,7 +221,8 @@ a{
     list-style-type: none;
 } 
 .paises div{
-    max-width: 45%;
+    max-width: 42.5%;
+    min-width: 10%;
 }
 .paises img{
     max-width: 100%;
