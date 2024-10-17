@@ -59,7 +59,7 @@ a{
     padding-right: 20px;
     margin-bottom: 1.95px;
     gap: 25px;
-    color: var(--primary-color);
+    color: black;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     background-color: var(--tercily-color);
     border-radius: 10px;

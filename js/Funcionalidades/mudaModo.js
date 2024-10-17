@@ -87,10 +87,22 @@ export function claroEscuro() {
     function mudarNavBarClaro(){
         navBar.style.backgroundColor = "var(--tercily-color)";
         navBar.style.color = "black";
+
+        document.getElementById("imgHo").src = "./imgs/icons/claro/homeC.png";
+        document.getElementById("imgMa").src = "./imgs/icons/claro/home+C.png";
+        document.getElementById("imgAn").src = "./imgs/icons/claro/pawC.png";
+        document.getElementById("imgPl").src = "./imgs/icons/claro/leafC.png";
+        document.getElementById("imgPe").src = "./imgs/icons/claro/bewareC.png";
     }
 
     function mudarNavBarEscuro(){
         navBar.style.backgroundColor = "var(--escuro)";
         navBar.style.color = "white";
+
+        document.getElementById("imgHo").src = "./imgs/icons/escuro/homeE.png";
+        document.getElementById("imgMa").src = "./imgs/icons/escuro/home+E.png";
+        document.getElementById("imgAn").src = "./imgs/icons/escuro/pawE.png";
+        document.getElementById("imgPl").src = "./imgs/icons/escuro/leafE.png";
+        document.getElementById("imgPe").src = "./imgs/icons/escuro/bewareE.png";
     }
 }
