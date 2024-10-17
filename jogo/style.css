@@ -1,3 +1,4 @@
+/* CSS fornecido */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -87,4 +88,28 @@ button:hover {
 
 .score-table tr:hover {
     background-color: #ddd;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 600px) {
+    .score-table {
+        display: flex; /* Permite rolagem horizontal */
+        flex-direction: column;
+        overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+        width: 100%; /* Garante a largura total */
+        box-sizing: border-box; /* Inclui padding e borda na largura total */
+        justify-content: center;
+    }
+
+    .score-table th, .score-table td {
+        display: block; /* Cada célula se comporta como um bloco */
+        text-align: left; /* Alinhamento à esquerda para melhor legibilidade */
+        width: 100%; /* Cada célula ocupa a largura total */
+        box-sizing: border-box; /* Inclui padding e borda na largura total */
+    }
+
+    .score-table tr {
+        margin-bottom: 10px; /* Espaçamento entre as linhas */
+        display: block; /* Cada linha se torna um bloco */
+    }
 }
