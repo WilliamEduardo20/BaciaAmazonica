@@ -31,7 +31,7 @@ export function barraResponsivaPC() {
                 claroEscuro();
                 redireciona();
                 opaco = false;
-            }, 500);
+            }, 800);
         }
     }
 

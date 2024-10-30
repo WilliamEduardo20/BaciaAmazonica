@@ -1,14 +1,16 @@
 export function claroEscuro() {
+    //Button Modo
     const modo = document.getElementById("modo");
+    //Elements
     const site = document.getElementById("site");
-    const titulo = document.getElementById("titulo");
-    const sub = document.querySelectorAll(".sub-titulo");
-    const elementosInfo = document.querySelectorAll(".info");
-    const redirect = document.querySelectorAll(".redirect");
-    const card = document.querySelectorAll(".card");
+    const title = document.getElementById("titulo");
     const navBar = document.getElementById("nav-bar");
-    const imgBorda = document.querySelectorAll(".bordaR2");
-    const rodape = document.getElementById("rodape");
+    const rod = document.getElementById("rodape");
+    const redirect = document.querySelectorAll(".redirect");
+    const subTitle = document.querySelectorAll(".sub-titulo");
+    const info = document.querySelectorAll(".info");
+    const card = document.querySelectorAll(".card");
+    const bord = document.querySelectorAll(".bordaR2");
 
     // Verifica o tema armazenado no localStorage
     const temaAtual = localStorage.getItem("tema");
@@ -24,21 +26,31 @@ export function claroEscuro() {
 
     function aplicarTemaClaro() {
         modo.innerHTML = "☀️";
-        site.style.backgroundColor = "white";
-        titulo.style.color = "black";
-        rodape.style.color = "#d1d1d1";
-        navBar.style.boxShadow = "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px";
-        elementosInfo.forEach(elemento => {
-            elemento.style.color = 'black';
+        site.classList.remove("escuro");
+        title.classList.remove("escuro");
+        navBar.classList.remove("escuro");
+        rod.classList.remove("escuro");
+        redirect.forEach(function(element) {
+            element.classList.remove("escuro");
         });
-        imgBorda.forEach(elemento => {
-            elemento.style.borderColor = 'black';
+        subTitle.forEach(function(element) {
+            element.classList.remove("escuro");
         });
-        aplicarEstilosCard(card, '0 2px 10px rgba(0, 0, 0, 0.3)');
-        aplicarEstilosSub(sub, 'black');
-        aplicarEstilosRedirect(redirect, 'black');
+        info.forEach(function(element) {
+            element.classList.remove("escuro");
+        });
+        card.forEach(function(element) {
+            element.classList.remove("escuro");
+        });
+        bord.forEach(function(element) {
+            element.classList.remove("escuro");
+        });
 
-        mudarNavBarClaro();
+        document.getElementById("imgHo").src = "./imgs/icons/claro/homeC.png";
+        document.getElementById("imgMa").src = "./imgs/icons/claro/home+C.png";
+        document.getElementById("imgAn").src = "./imgs/icons/claro/pawC.png";
+        document.getElementById("imgPl").src = "./imgs/icons/claro/leafC.png";
+        document.getElementById("imgPe").src = "./imgs/icons/claro/bewareC.png";
 
         // Salva a preferência no localStorage
         localStorage.setItem("tema", "claro");
@@ -46,63 +58,33 @@ export function claroEscuro() {
 
     function aplicarTemaEscuro() {
         modo.innerHTML = "🌙";
-        site.style.backgroundColor = "black";
-        titulo.style.color = "white";
-        rodape.style.color = "rgb(76, 175, 80)";
-        navBar.style.boxShadow = "rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px";
-        elementosInfo.forEach(elemento => {
-            elemento.style.color = '#4CAF50';
+        site.classList.add("escuro");
+        title.classList.add("escuro");
+        navBar .classList.add("escuro");
+        rod.classList.add("escuro");
+        redirect.forEach(function(element) {
+            element.classList.add("escuro");
         });
-        imgBorda.forEach(elemento => {
-            elemento.style.borderColor = 'white';
+        subTitle.forEach(function(element) {
+            element.classList.add("escuro");
         });
-        aplicarEstilosCard(card, '0 4px 20px rgba(0, 128, 255, 0.7)');
-        aplicarEstilosSub(sub, '#08B2E3');
-        aplicarEstilosRedirect(redirect, 'white');
-
-        mudarNavBarEscuro();
-
-        // Salva a preferência no localStorage
-        localStorage.setItem("tema", "escuro");
-    }
-
-    function aplicarEstilosCard(cards, boxShadow) {
-        cards.forEach(elemento => {
-            elemento.style.boxShadow = boxShadow;
+        info.forEach(function(element) {
+            element.classList.add("escuro");
         });
-    }
-
-    function aplicarEstilosSub(subs, color) {
-        subs.forEach(elemento => {
-            elemento.style.color = color;
+        card.forEach(function(element) {
+            element.classList.add("escuro");
         });
-    }
-
-    function aplicarEstilosRedirect(redirects, color) {
-        redirects.forEach(elemento => {
-            elemento.style.color = color;
+        bord.forEach(function(element) {
+            element.classList.add("escuro");
         });
-    }
-
-    function mudarNavBarClaro(){
-        navBar.style.backgroundColor = "var(--tercily-color)";
-        navBar.style.color = "black";
-
-        document.getElementById("imgHo").src = "./imgs/icons/claro/homeC.png";
-        document.getElementById("imgMa").src = "./imgs/icons/claro/home+C.png";
-        document.getElementById("imgAn").src = "./imgs/icons/claro/pawC.png";
-        document.getElementById("imgPl").src = "./imgs/icons/claro/leafC.png";
-        document.getElementById("imgPe").src = "./imgs/icons/claro/bewareC.png";
-    }
-
-    function mudarNavBarEscuro(){
-        navBar.style.backgroundColor = "var(--escuro)";
-        navBar.style.color = "white";
 
         document.getElementById("imgHo").src = "./imgs/icons/escuro/homeE.png";
         document.getElementById("imgMa").src = "./imgs/icons/escuro/home+E.png";
         document.getElementById("imgAn").src = "./imgs/icons/escuro/pawE.png";
         document.getElementById("imgPl").src = "./imgs/icons/escuro/leafE.png";
         document.getElementById("imgPe").src = "./imgs/icons/escuro/bewareE.png";
+
+        // Salva a preferência no localStorage
+        localStorage.setItem("tema", "escuro");
     }
 }

@@ -1,0 +1,59 @@
+/*Pagina Modo Escuro*/
+
+/*Cores Do Site*/
+:root {
+    --escuro: #455F49;
+    --primary-color: #4C7E4F;
+    --secondy-color: #638F65;
+    --tercily-color: #799F7B;
+    --fourtly-color: #A6BFA7;
+}
+
+/*Site*/
+#site.escuro{
+    background-color: black;
+}
+
+/*Title*/
+#titulo.escuro{
+ color: white;
+}
+
+/*Sub-Title*/
+.sub-titulo.escuro{
+    color: #08B2E3;
+}
+
+/*Information*/
+.info.escuro{
+    color: #4CAF50;
+}
+
+/*Navigation Bar*/
+.nav-bar.escuro{
+    background-color: var(--escuro);
+    box-shadow: rgba(255, 255, 255, 0.50) 1.95px 1.95px 2.6px;
+    color: white;
+}
+/*Redirection*/
+.redirect.escuro{
+    color: white;
+}
+
+/*Info Card*/
+.card.escuro{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*Image*/
+.bordaR2.escuro{
+    border-color: white;
+}
+
+/*Rodape*/
+#rodape{
+    color: #d1d1d1;
+}
+#rodape.escuro{
+    color: rgb(76, 175, 80);
+}

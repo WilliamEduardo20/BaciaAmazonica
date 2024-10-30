@@ -21,7 +21,6 @@ export function secretoF2() {
     function toggleTransparency() {
         if (localStorage.getItem("transpa") === "true") {
             navBar.style.backdropFilter = "none"; 
-            navBar.style.backgroundColor = "var(--tercily-color)";
             localStorage.setItem("transpa", "false");
         } else {
             navBar.style.backdropFilter = "blur(20px)";
@@ -37,7 +36,6 @@ export function secretoF2() {
             navBar.style.backgroundColor = "transparent";
         } else {
             navBar.style.backdropFilter = "none"; 
-            navBar.style.backgroundColor = "var(--tercily-color)";
         }
     }
 }
