@@ -14,9 +14,6 @@ creatCardAnimal();
 //Mostra detalhes do Cartão
 criaMensagem();
 
-//Modo Escuro e Modo Claro
-claroEscuro();
-
 //Redireciona Para outra páginas
 redireciona();
 
@@ -32,6 +29,9 @@ carrosel();
 
 //Aleatoriza as Imagens do Carrosel
 aleatorio();
+
+//Modo Escuro e Modo Claro
+claroEscuro();
 
 //???//
 secreto();
