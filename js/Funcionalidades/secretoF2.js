@@ -1,3 +1,5 @@
+import { claroEscuro } from "./mudaModo.js";
+
 // Armazena o valor "false" na localStorage com a chave "transpa" apenas na primeira execução
 if (!localStorage.getItem("transpa")) {
     localStorage.setItem("transpa", "false");
@@ -21,6 +23,7 @@ export function secretoF2() {
     function toggleTransparency() {
         if (localStorage.getItem("transpa") === "true") {
             navBar.style.backdropFilter = "none"; 
+            navBar.style.backgroundColor = localStorage.getItem("tema") === "escuro" ? "var(--escuro)" : "var(--tercily-color)";
             localStorage.setItem("transpa", "false");
         } else {
             navBar.style.backdropFilter = "blur(20px)";
