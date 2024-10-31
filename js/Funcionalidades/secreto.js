@@ -15,7 +15,7 @@ export function secreto() {
             const secreto = `
             <a id="secreto" href="./jogo/index.html">
                 <div class="redirection" role="button" tabindex="0">
-                    <img src="./imgs/icons/secreto.png" class="icon" alt="???">
+                    <img id="s" src="./imgs/icons/escuro/secretoE.png" class="icon" alt="???">
                     <p>???</p>
                 </div>
             </a>`;

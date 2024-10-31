@@ -34,9 +34,10 @@
     background-color: var(--escuro);
     box-shadow: rgba(255, 255, 255, 0.50) 1.95px 1.95px 2.6px;
     color: white;
+    transition: .8s;
 }
 /*Redirection*/
-.redirect.escuro{
+.redirection.escuro{
     color: white;
 }
 

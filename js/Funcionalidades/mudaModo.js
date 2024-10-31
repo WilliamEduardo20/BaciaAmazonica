@@ -6,7 +6,7 @@ export function claroEscuro() {
     const title = document.getElementById("titulo");
     const navBar = document.getElementById("nav-bar");
     const rod = document.getElementById("rodape");
-    const redirect = document.querySelectorAll(".redirect");
+    const redirect = document.querySelectorAll(".redirection");
     const subTitle = document.querySelectorAll(".sub-titulo");
     const info = document.querySelectorAll(".info");
     const card = document.querySelectorAll(".card");
@@ -51,6 +51,9 @@ export function claroEscuro() {
         document.getElementById("imgAn").src = "./imgs/icons/claro/pawC.png";
         document.getElementById("imgPl").src = "./imgs/icons/claro/leafC.png";
         document.getElementById("imgPe").src = "./imgs/icons/claro/bewareC.png";
+        if (document.getElementById("s")) {
+            document.getElementById("s").src = "./imgs/icons/claro/secretoC.png";
+        }
 
         // Salva a preferência no localStorage
         localStorage.setItem("tema", "claro");
@@ -83,6 +86,9 @@ export function claroEscuro() {
         document.getElementById("imgAn").src = "./imgs/icons/escuro/pawE.png";
         document.getElementById("imgPl").src = "./imgs/icons/escuro/leafE.png";
         document.getElementById("imgPe").src = "./imgs/icons/escuro/bewareE.png";
+        if (document.getElementById("s")) {
+            document.getElementById("s").src = "./imgs/icons/escuro/secretoE.png";
+        }
 
         // Salva a preferência no localStorage
         localStorage.setItem("tema", "escuro");
