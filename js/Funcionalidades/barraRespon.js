@@ -7,12 +7,14 @@ export function barraResponsivaPC() {
     const box = document.getElementById('box');
     const button = document.getElementById('modo');
     const navBar = document.getElementById('nav-bar');
+    const icon = document.querySelectorAll('.bar')
 
     function mudaBarra() {
         if (!opaco) {
             box.style.transition = 'opacity 0.5s ease';
             box.style.opacity = '0';
             button.style.opacity = '0';
+            icon[1].classList.remove("paddingL");
             
             setTimeout(() => {
                 box.style.display = 'none';
@@ -22,6 +24,7 @@ export function barraResponsivaPC() {
             }, 10);
         } else {
             navBar.classList.remove("compacta");
+            icon[1].classList.add("paddingL");
             
             setTimeout(() => {
                 box.style.display = 'flex';

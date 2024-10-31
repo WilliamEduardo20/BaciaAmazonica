@@ -46,6 +46,24 @@ a{
     color: #474747;
 }
 
+/*Icon da Barra*/
+.open{
+    display: flex;
+    gap: 5px;
+}
+.expansion{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.bar{
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: black;
+    transition: .8s;
+}
+
 /*Header*/
 .nav-bar{
     z-index: 3;
@@ -65,10 +83,11 @@ a{
     border-radius: 10px;
     margin: 10px;
     width: calc(100% - 20px);
-    transition: .8s;
+    transition: .8s all;
 }
 .nav-bar.compacta{
-    width: 200px;
+    max-width: 250px;
+    transition: .8s all;
 }
 .title{
     font-size: 20pt;

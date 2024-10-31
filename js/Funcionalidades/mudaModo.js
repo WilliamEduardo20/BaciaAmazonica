@@ -11,6 +11,7 @@ export function claroEscuro() {
     const info = document.querySelectorAll(".info");
     const card = document.querySelectorAll(".card");
     const bord = document.querySelectorAll(".bordaR2");
+    const icon = document.querySelectorAll(".bar");
 
     // Verifica o tema armazenado no localStorage
     const temaAtual = localStorage.getItem("tema");
@@ -50,6 +51,9 @@ export function claroEscuro() {
             bord.forEach(function(element) {
                 element.classList.remove("escuro");
             });
+            icon.forEach(function(element) {
+                element.classList.remove("escuro");
+            });
 
             document.getElementById("imgHo").src = "./imgs/icons/claro/homeC.png";
             document.getElementById("imgMa").src = "./imgs/icons/claro/home+C.png";
@@ -87,6 +91,9 @@ export function claroEscuro() {
                 element.classList.add("escuro");
             });
             bord.forEach(function(element) {
+                element.classList.add("escuro");
+            });
+            icon.forEach(function(element) {
                 element.classList.add("escuro");
             });
 
