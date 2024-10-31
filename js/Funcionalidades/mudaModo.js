@@ -26,8 +26,6 @@ export function claroEscuro() {
 
     function aplicarTemaClaro() {
         modo.innerHTML = "☀️";
-        navBar.style.removeProperty('background-color');
-
         site.classList.remove("escuro");
         title.classList.remove("escuro");
         navBar.classList.remove("escuro");
@@ -60,8 +58,6 @@ export function claroEscuro() {
 
     function aplicarTemaEscuro() {
         modo.innerHTML = "🌙";
-        navBar.style.removeProperty('background-color');
-
         site.classList.add("escuro");
         title.classList.add("escuro");
         navBar .classList.add("escuro");

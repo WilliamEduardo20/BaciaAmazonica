@@ -22,8 +22,9 @@ export function secretoF2() {
     // Função para alternar a transparência
     function toggleTransparency() {
         if (localStorage.getItem("transpa") === "true") {
-            navBar.style.backdropFilter = "none"; 
-            navBar.style.backgroundColor = localStorage.getItem("tema") === "escuro" ? "var(--escuro)" : "var(--tercily-color)";
+            navBar.style.backdropFilter = "none";
+            navBar.style.removeProperty("background-color");
+            claroEscuro();
             localStorage.setItem("transpa", "false");
         } else {
             navBar.style.backdropFilter = "blur(20px)";
@@ -39,6 +40,8 @@ export function secretoF2() {
             navBar.style.backgroundColor = "transparent";
         } else {
             navBar.style.backdropFilter = "none"; 
+            navBar.style.removeProperty("background-color");
+            claroEscuro();
         }
     }
 }
