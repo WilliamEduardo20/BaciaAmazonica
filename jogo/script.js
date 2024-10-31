@@ -232,6 +232,9 @@ const animais = [
     }
 ];
 
+import { claroEscuro } from "../js/Funcionalidades/mudaModo.js";
+claroEscuro();
+
 function voltar(){
     window.location.href = "../index.html";
 }
@@ -337,13 +340,6 @@ nextButton.addEventListener('click', () => {
         showScore();
     }
 });
-
-function showScore() {
-    scoreElement.innerText = `${score} de ${selectedQuestions.length}`;
-    scoreContainer.classList.remove('hidden');
-    questionElement.innerText = '';
-    answersElement.innerHTML = '';
-}
 
 let scores = [];
 

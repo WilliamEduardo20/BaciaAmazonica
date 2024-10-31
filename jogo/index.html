@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de Perguntas e Respostas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styleEscuro.css">
 </head>
-<body>
+<body id="site">
     <img class="voltar" src="../imgs/icons/seta.png" alt="Voltar" onclick="voltar()">
     <div class="container">
-        <h1>Jogo de Perguntas e Respostas sobre Animais</h1>
+        <h1 class="info">Jogo de Perguntas e Respostas sobre Animais</h1>
         <div id="setup-container">
-            <h2>Escolha o número de perguntas:</h2>
+            <h2 class="sub-titulo">Escolha o número de perguntas:</h2>
             <select id="question-count">
                 <option value="2">2 Perguntas</option>
                 <option value="5">5 Perguntas</option>
@@ -50,6 +51,6 @@
             </table>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

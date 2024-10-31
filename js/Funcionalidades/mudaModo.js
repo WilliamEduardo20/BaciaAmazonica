@@ -19,40 +19,46 @@ export function claroEscuro() {
     // Aplica o tema inicial
     claro ? aplicarTemaClaro() : aplicarTemaEscuro();
 
-    modo.addEventListener('click', function() {
-        claro = !claro; // Alterna entre true e false
-        claro ? aplicarTemaClaro() : aplicarTemaEscuro();
-    });
+    if (modo) {
+        modo.addEventListener('click', function() {
+            claro = !claro; // Alterna entre true e false
+            claro ? aplicarTemaClaro() : aplicarTemaEscuro();
+        });
+    }
 
     function aplicarTemaClaro() {
-        modo.innerHTML = "☀️";
+        if (modo) {
+            modo.innerHTML = "☀️";
+        }
         site.classList.remove("escuro");
-        title.classList.remove("escuro");
-        navBar.classList.remove("escuro");
-        rod.classList.remove("escuro");
-        redirect.forEach(function(element) {
+        info.forEach(function(element) {
             element.classList.remove("escuro");
         });
         subTitle.forEach(function(element) {
             element.classList.remove("escuro");
         });
-        info.forEach(function(element) {
-            element.classList.remove("escuro");
-        });
-        card.forEach(function(element) {
-            element.classList.remove("escuro");
-        });
-        bord.forEach(function(element) {
-            element.classList.remove("escuro");
-        });
+        if (navBar) {
+            title.classList.remove("escuro");
+            navBar.classList.remove("escuro");
+            rod.classList.remove("escuro");
+            redirect.forEach(function(element) {
+                element.classList.remove("escuro");
+            });
+            card.forEach(function(element) {
+                element.classList.remove("escuro");
+            });
+            bord.forEach(function(element) {
+                element.classList.remove("escuro");
+            });
 
-        document.getElementById("imgHo").src = "./imgs/icons/claro/homeC.png";
-        document.getElementById("imgMa").src = "./imgs/icons/claro/home+C.png";
-        document.getElementById("imgAn").src = "./imgs/icons/claro/pawC.png";
-        document.getElementById("imgPl").src = "./imgs/icons/claro/leafC.png";
-        document.getElementById("imgPe").src = "./imgs/icons/claro/bewareC.png";
-        if (document.getElementById("s")) {
-            document.getElementById("s").src = "./imgs/icons/claro/secretoC.png";
+            document.getElementById("imgHo").src = "./imgs/icons/claro/homeC.png";
+            document.getElementById("imgMa").src = "./imgs/icons/claro/home+C.png";
+            document.getElementById("imgAn").src = "./imgs/icons/claro/pawC.png";
+            document.getElementById("imgPl").src = "./imgs/icons/claro/leafC.png";
+            document.getElementById("imgPe").src = "./imgs/icons/claro/bewareC.png";
+            if (document.getElementById("s")) {
+                document.getElementById("s").src = "./imgs/icons/claro/secretoC.png";
+            }
         }
 
         // Salva a preferência no localStorage
@@ -60,34 +66,38 @@ export function claroEscuro() {
     }
 
     function aplicarTemaEscuro() {
-        modo.innerHTML = "🌙";
+        if (modo) {
+            modo.innerHTML = "🌙";
+        }
         site.classList.add("escuro");
-        title.classList.add("escuro");
-        navBar .classList.add("escuro");
-        rod.classList.add("escuro");
-        redirect.forEach(function(element) {
+        info.forEach(function(element) {
             element.classList.add("escuro");
         });
         subTitle.forEach(function(element) {
             element.classList.add("escuro");
         });
-        info.forEach(function(element) {
-            element.classList.add("escuro");
-        });
-        card.forEach(function(element) {
-            element.classList.add("escuro");
-        });
-        bord.forEach(function(element) {
-            element.classList.add("escuro");
-        });
+        if(navBar){
+            navBar .classList.add("escuro");
+            title.classList.add("escuro");
+            rod.classList.add("escuro");
+            redirect.forEach(function(element) {
+                element.classList.add("escuro");
+            });
+            card.forEach(function(element) {
+                element.classList.add("escuro");
+            });
+            bord.forEach(function(element) {
+                element.classList.add("escuro");
+            });
 
-        document.getElementById("imgHo").src = "./imgs/icons/escuro/homeE.png";
-        document.getElementById("imgMa").src = "./imgs/icons/escuro/home+E.png";
-        document.getElementById("imgAn").src = "./imgs/icons/escuro/pawE.png";
-        document.getElementById("imgPl").src = "./imgs/icons/escuro/leafE.png";
-        document.getElementById("imgPe").src = "./imgs/icons/escuro/bewareE.png";
-        if (document.getElementById("s")) {
-            document.getElementById("s").src = "./imgs/icons/escuro/secretoE.png";
+            document.getElementById("imgHo").src = "./imgs/icons/escuro/homeE.png";
+            document.getElementById("imgMa").src = "./imgs/icons/escuro/home+E.png";
+            document.getElementById("imgAn").src = "./imgs/icons/escuro/pawE.png";
+            document.getElementById("imgPl").src = "./imgs/icons/escuro/leafE.png";
+            document.getElementById("imgPe").src = "./imgs/icons/escuro/bewareE.png";
+            if (document.getElementById("s")) {
+                document.getElementById("s").src = "./imgs/icons/escuro/secretoE.png";
+            }
         }
 
         // Salva a preferência no localStorage
