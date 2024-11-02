@@ -7,26 +7,26 @@ export function redireciona() {
 
     home.onclick = function() {
         localStorage.setItem("s1", "true");
-        window.location.href = "index.html";
+        window.location.href = `${document.getElementById("jogo") ? "../" : ""}index.html`;
     };
     
     mais.onclick = function() {
         localStorage.setItem("s2", "true");
-        window.location.href = "mais.html";
+        window.location.href = `${document.getElementById("jogo") ? "../" : ""}mais.html`;
     };
 
     animais.onclick = function() {
         localStorage.setItem("s3", "true");
-        window.location.href = "animais.html";
+        window.location.href = `${document.getElementById("jogo") ? "../" : ""}animais.html`;
     };
     
     plantas.onclick = function() {
         localStorage.setItem("s4", "true");
-        window.location.href = "plantas.html";
+        window.location.href = `${document.getElementById("jogo") ? "../" : ""}plantas.html`;
     };
 
     prob.onclick = function() {
         localStorage.setItem("s5", "true");
-        window.location.href = "problemas.html";
+        window.location.href = `${document.getElementById("jogo") ? "../" : ""}problemas.html`;
     }
 }

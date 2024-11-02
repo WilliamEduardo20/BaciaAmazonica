@@ -234,11 +234,15 @@ const animais = [
 
 import { claroEscuro } from "../js/Funcionalidades/mudaModo.js";
 claroEscuro();
-
-function voltar(){
-    window.location.href = "../index.html";
+//Barra Responsiva
+import { barraResponsivaPC, barraResponsivaMobi } from "../js/Funcionalidades/barraRespon.js";
+if (document.getElementById("site").offsetWidth <= 480) {
+    barraResponsivaMobi();
+} else {
+    barraResponsivaPC();
 }
-document.querySelector('.voltar').addEventListener('click', voltar);
+import { redireciona } from "../js/Funcionalidades/redireciona.js";
+redireciona();
 
 let totalQuestions = 0;
 let currentQuestionIndex = 0;
@@ -257,6 +261,7 @@ document.getElementById('start-button').addEventListener('click', () => {
     totalQuestions = parseInt(document.getElementById('question-count').value);
     console.log("Total de perguntas selecionadas: ", totalQuestions);
     document.getElementById("quiz-container").style.display = 'block';
+    document.getElementById("setup-container").style.display = 'none';
     startGame();
 });
 
@@ -277,6 +282,10 @@ function startGame() {
     nextButton.classList.add('hidden');
     scoreContainer.classList.add('hidden');
     feedbackElement.classList.add('hidden');
+    document.getElementById("next-button").classList.add('block');
+    document.getElementById("quiz-container").classList.remove('hidden');
+    document.getElementById("name-container").classList.add('hidden');
+    document.getElementById('scoreboard-container').classList.add('hidden')
 
     showQuestion(selectedQuestions[currentQuestionIndex]);
 }
@@ -318,10 +327,12 @@ function selectAnswer(index, pergunta) {
         feedbackElement.innerText = "Resposta Correta!";
         feedbackElement.classList.remove('incorrect');
         feedbackElement.classList.add('correct');
+        document.getElementById("next-button").classList.remove('hidden');
     } else {
         feedbackElement.innerText = "Resposta Errada!";
         feedbackElement.classList.remove('correct');
         feedbackElement.classList.add('incorrect');
+        document.getElementById("next-button").classList.remove('hidden');
     }
     feedbackElement.classList.remove('hidden');
     nextButton.classList.remove('hidden');
@@ -376,7 +387,6 @@ document.getElementById('submit-name').addEventListener('click', () => {
 
         saveScoresToLocalStorage(); // Salva os scores no localStorage
         displayScoreboard();
-        scoreContainer.classList.add('hidden');
         scoreboardContainer.classList.remove('hidden');
     } else if (!userName) {
         alert("Por favor, insira seu nome.");
@@ -402,6 +412,10 @@ function showScore() {
     questionElement.innerText = '';
     answersElement.innerHTML = '';
     nameContainer.classList.remove('hidden'); // Exibe o formulário para nome
+    document.getElementById("next-button").classList.remove('block');
+    document.getElementById("next-button").classList.add('hidden');
+    document.getElementById("quiz-container").classList.add('hidden');
+    document.getElementById("quiz-container").style.display = "";
 }
 
 restartButton.addEventListener('click', startGame);

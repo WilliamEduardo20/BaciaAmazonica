@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+<head id="jogo">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de Perguntas e Respostas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../styleEscuro.css">
+    <link rel="stylesheet" href="../lista.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body id="site">
-    <div class="container">
-        <div class="voltar">
-            <img class="imga" src="../imgs/icons/seta.png" alt="Voltar" onclick="voltar()">
-            <h1 class="sub-titulo">Voltar</h1>
+    <nav id="nav-bar" class="nav-bar" aria-label="Main Navigation">
+        <div class="redirection open">
+            <div class="expansion">
+                <div class="bar"></div>
+                <div class="bar paddingL"></div>
+                <div class="bar"></div>
+            </div>
+            <p id="bioma" class="title text-center">Bacia Amazônica</p>
         </div>
-        <h1 class="info jogo">Jogo de Perguntas e Respostas sobre Animais</h1>
+        <div id="box" class="box">
+            <div id="home" class="redirection" role="button" tabindex="0">
+                <img id="imgHo" src="../imgs/icons/home.png" class="icon" alt="home">
+                <p>Home</p>
+            </div>
+            <div id="mais" class="redirection" role="button" tabindex="0">
+                <img id="imgMa" src="../imgs/icons/home+.png" class="icon" alt="mais">
+                <p>Saiba+</p>
+            </div>
+            <div id="animais" class="redirection" role="button" tabindex="0">
+                <img id="imgAn" src="../imgs/icons/paw.png" class="icon" alt="Animais">
+                <p>Animais</p>
+            </div>
+            <div id="plantas" class="redirection" role="button" tabindex="0">
+                <img id="imgPl" src="../imgs/icons/leaf.png" class="icon" alt="Plantas">
+                <p>Plantas</p>
+            </div>
+            <div id="perigo" class="redirection" role="button" tabindex="0">
+                <img id="imgPe" src="../imgs/icons/beware.png" class="icon" alt="perigo">
+                <p>Problemas</p>
+            </div>
+        </div>
+        <button id="modo" class="button-29" aria-label="Toggle light/dark mode">☀️</button>
+    </nav>
+    <div class="container">
+        <h2 id="titulo" class="titulo">Jogo de Perguntas e Respostas</h2>
         <div id="setup-container">
-            <h2 class="sub-titulo">Escolha o número de perguntas:</h2>
+            <h3 class="sub-titulo">Escolha o número de perguntas:</h3>
             <select id="question-count">
                 <option value="2">2 Perguntas</option>
                 <option value="5">5 Perguntas</option>

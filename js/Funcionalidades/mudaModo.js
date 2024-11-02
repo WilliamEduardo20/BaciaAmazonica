@@ -35,13 +35,15 @@ export function claroEscuro() {
         info.forEach(function(element) {
             element.classList.remove("escuro");
         });
+        title.classList.remove("escuro");
+        if (rod){
+            rod.classList.add("escuro");
+        }
         subTitle.forEach(function(element) {
             element.classList.remove("escuro");
         });
         if (navBar) {
-            title.classList.remove("escuro");
             navBar.classList.remove("escuro");
-            rod.classList.remove("escuro");
             redirect.forEach(function(element) {
                 element.classList.remove("escuro");
             });
@@ -55,13 +57,14 @@ export function claroEscuro() {
                 element.classList.remove("escuro");
             });
 
-            document.getElementById("imgHo").src = "./imgs/icons/claro/homeC.png";
-            document.getElementById("imgMa").src = "./imgs/icons/claro/home+C.png";
-            document.getElementById("imgAn").src = "./imgs/icons/claro/pawC.png";
-            document.getElementById("imgPl").src = "./imgs/icons/claro/leafC.png";
-            document.getElementById("imgPe").src = "./imgs/icons/claro/bewareC.png";
+            const isJogo = document.getElementById("jogo") ? "." : "";
+            document.getElementById("imgHo").src = `${isJogo}./imgs/icons/claro/homeC.png`;
+            document.getElementById("imgMa").src = `${isJogo}./imgs/icons/claro/home+C.png`;
+            document.getElementById("imgAn").src = `${isJogo}./imgs/icons/claro/pawC.png`;
+            document.getElementById("imgPl").src = `${isJogo}./imgs/icons/claro/leafC.png`;
+            document.getElementById("imgPe").src = `${isJogo}./imgs/icons/claro/bewareC.png`;
             if (document.getElementById("s")) {
-                document.getElementById("s").src = "./imgs/icons/claro/secretoC.png";
+                document.getElementById("s").src = `${isJogo}./imgs/icons/claro/secretoC.png`;
             }
         }
 
@@ -77,13 +80,15 @@ export function claroEscuro() {
         info.forEach(function(element) {
             element.classList.add("escuro");
         });
+        title.classList.remove("escuro");
+        if (rod){
+            rod.classList.add("escuro");
+        }
         subTitle.forEach(function(element) {
             element.classList.add("escuro");
         });
         if(navBar){
-            navBar .classList.add("escuro");
-            title.classList.add("escuro");
-            rod.classList.add("escuro");
+            navBar.classList.add("escuro");
             redirect.forEach(function(element) {
                 element.classList.add("escuro");
             });
@@ -97,13 +102,14 @@ export function claroEscuro() {
                 element.classList.add("escuro");
             });
 
-            document.getElementById("imgHo").src = "./imgs/icons/escuro/homeE.png";
-            document.getElementById("imgMa").src = "./imgs/icons/escuro/home+E.png";
-            document.getElementById("imgAn").src = "./imgs/icons/escuro/pawE.png";
-            document.getElementById("imgPl").src = "./imgs/icons/escuro/leafE.png";
-            document.getElementById("imgPe").src = "./imgs/icons/escuro/bewareE.png";
+            const isJogo = document.getElementById("jogo") ? "." : "";
+            document.getElementById("imgHo").src = `${isJogo}./imgs/icons/escuro/homeE.png`;
+            document.getElementById("imgMa").src = `${isJogo}./imgs/icons/escuro/home+E.png`;
+            document.getElementById("imgAn").src = `${isJogo}./imgs/icons/escuro/pawE.png`;
+            document.getElementById("imgPl").src = `${isJogo}./imgs/icons/escuro/leafE.png`;
+            document.getElementById("imgPe").src = `${isJogo}./imgs/icons/escuro/bewareE.png`;
             if (document.getElementById("s")) {
-                document.getElementById("s").src = "./imgs/icons/escuro/secretoE.png";
+                document.getElementById("s").src = `${isJogo}./imgs/icons/escuro/secretoE.png`;
             }
         }
 

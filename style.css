@@ -119,7 +119,7 @@ a{
 .icon{ width: 50px;}
 
 /*Button Modo Escuro*/
-.button-29 {
+.nav-bar .button-29 {
   align-items: center;
   appearance: none;
   background-image: radial-gradient(100% 100% at 100% 0, var(--primary-color) 0, var(--secondy-color) 100%);
@@ -149,14 +149,14 @@ a{
   will-change: box-shadow,transform;
   font-size: 18px;
 }
-.button-29:focus {
+.nav-bar .button-29:focus {
   box-shadow: var(--tercily-color) 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, var(--tercily-color) 0 -3px 0 inset;
 }
-.button-29:hover {
+.nav-bar .button-29:hover {
   box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, var(--primary-color) 0 -3px 0 inset;
   transform: translateY(-2px);
 }
-.button-29:active {
+.nav-bar .button-29:active {
   box-shadow: var(--tercily-color) 0 3px 7px inset;
   background-color: var(--secondy-color);
   transform: scale(1.05);

@@ -3,41 +3,27 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
 }
 
-.container {
+#site{
+    position: relative;
+}
+
+#scoreboard-container, #score-container, #name-container{
+    margin-top: 20px;
+}
+
+.nav-bar{
+    top: 0;
+}
+
+.container{
     max-width: 600px;
     margin: auto;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.voltar{
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    padding-top: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #218838;
-    width: 150px;
-    height: 50px;
-    border-radius: 50px;
-    margin: 5px;
-}
-.voltar .imga{
-    width: 30%;
-    cursor: pointer;
-    padding-right: 5px;
-}
-
-.jogo{
-    margin-top: 50px;
 }
 
 h1 {
@@ -48,8 +34,7 @@ h1 {
     margin: 20px 0;
 }
 
-button {
-    display: block;
+.container button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -60,10 +45,13 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.container button:hover {
     background-color: #218838;
 }
 
+.block{
+    display: block;
+}
 .hidden {
     display: none;
 }
