@@ -37,7 +37,7 @@ export function claroEscuro() {
         });
         title.classList.remove("escuro");
         if (rod){
-            rod.classList.add("escuro");
+            rod.classList.remove("escuro");
         }
         subTitle.forEach(function(element) {
             element.classList.remove("escuro");
