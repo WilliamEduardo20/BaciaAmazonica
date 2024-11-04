@@ -80,7 +80,7 @@ export function claroEscuro() {
         info.forEach(function(element) {
             element.classList.add("escuro");
         });
-        title.classList.remove("escuro");
+        title.classList.add("escuro");
         if (rod){
             rod.classList.add("escuro");
         }
